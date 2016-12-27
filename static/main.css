@@ -1,0 +1,48 @@
+body{
+  margin: 100px;
+}
+
+div .attendee{
+  /*width: 100px;*/
+  border: solid black 2px;
+  border-radius: 10px;
+  font-family: 'Raleway';
+}
+
+div .present{
+  background-color: #d1d1e0;
+  color: black;
+}
+
+.attendee p{
+  font-size: 16px;
+}
+
+.attendee h4{
+  font-weight: bolder;
+}
+
+.present p{
+  color: #AAADAD
+}
+
+.present h4{
+  color: #AAADAD
+}
+
+
+.attendee{
+  background-color: #ffffb3
+}
+
+.jumbotron {
+	text-align: center;
+    padding: 200px 0px 150px 0px;
+	min-height: 600px;
+	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/65/be/af/65beaf5c7577ebeee4abd1ba6fa75b26.jpg");
+	background-size: cover;
+	font-family: 'Seymour+One', cursive;
+	color: black;
+	border-color: black;
+	font-size: 500px;
+}

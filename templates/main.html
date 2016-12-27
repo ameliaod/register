@@ -1,0 +1,173 @@
+<!doctype html>
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../static/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, intial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Seymour+One" rel="stylesheet">
+
+  <title> RegiSTAR </title>
+  <img class="event-img"
+  width="200"
+  height="50%"
+  src="http://images.clipartpanda.com/clipart-star-dT6okBaT9.jpeg">
+  <small>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="../static/main.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="navbar-header">
+
+          <a class="navbar-brand" id="navbar1" href="/">Home</a>
+          <a class="navbar-brand" id="navbar2" href="#event-img">
+            <img class="event-img"
+            width="60"
+            height="100%"
+            src="http://images.clipartpanda.com/clipart-star-dT6okBaT9.jpeg">
+            <small> </a>
+            </div>
+          </nav>
+
+          <div class="row">
+            <div class="col-sm-9">
+              <h3> {{event}} </h3>
+              <h3> {{date}} </h3>
+              <h3> {{venue}} </h3>
+            </div>
+            <div class="col-sm-3">
+
+              <iframe
+              width="225"
+              height="162.5"
+              frameborder="0" style="border:0"
+              src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAmcTUQw1JNXAEiZUEUVF_YlmKhE-5uycc&q=Code_Node" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+     <div class="container">
+          <h3>
+            {% for i in f_names %}
+            <h3>
+            </h3>
+              <div class= "text-center attendee" id="{{f_names[loop.index0]}}-{{l_names[loop.index0]}}-{{companies[loop.index0]}}">
+                  <h4> {{f_names[loop.index0]}} {{l_names[loop.index0]}} </h4>
+                <p> {{companies[loop.index0]}} </p>
+              </div>
+              {% endfor %}
+            </h3>
+            <h3>
+            </h3>
+    </div>
+
+
+
+          <!-- The form needs to be seprated into first name and last name (optional company?) -->
+          <div class="container">
+            <div id="signup-form">
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" id="categorytwo">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  <h4 class="panel-title" id="cateogorytwo">
+                    Not on the list? Add your name below:
+                    <span class ="arrow-down pull-right glyphicon glyphicon-chevron-up">
+                    </span>
+                  </h4>
+                </a>
+              </div>
+              <form method="post" action="/signup">
+                <h4>
+                  <!-- <div class="container"> -->
+                  <label style="padding-right:66px;" for="first_name">First Name: </label>
+                  <input type="text" id="first_name" name="first_name" value="" placeholder="First name" required="required" autofocus="autofocus"/>
+                </h4>
+                <h4>
+                  <!-- <div class="container"> -->
+                  <label style="padding-right:67px;" for="last_name">Last Name: </label>
+                  <input type="text" id="last_name" name="last_name" value="" placeholder="Last name" required="required" autofocus="autofocus"/>
+                </h4>
+                <h4>
+                  <!-- <div class="container"> -->
+                  <label style="padding-right:80px;" for="company">Company: </label>
+                  <input type="text" id="company" name="company" value="" placeholder="Company" required="required" autofocus="autofocus"/>
+                </h4>
+                <h4>
+                  <!-- <div class="container"> -->
+                  <label style="padding-right:25px;" for="email">Email Address: <padding: 200px;> </label>
+                  <input type="email" id="email" name="email" value="" placeholder="joe@bloggs.com" required="required" autofocus="autofocus"/>
+                </h4>
+                <h4>
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked="1" autofocus="autofocus"> </input>
+                <label> Tick this box if you'd like to receive Registar newsletter </h4>
+                  <h5> <i>We will never pass you details to any other companies</i></h5>
+                </label>
+
+              </h4>
+                <h4>
+                  <button type="submit" class="btn btn-xs new_signup_btn" id="myBtn1">Submit</button>
+                </h4>
+              </form>
+
+              <!-- make this correspond to Jquery so when this button is clicked the list of those who attended / did not attended is generated -->
+              <!-- This should send out the emails to present and absent  -->
+              <div>
+              </div>
+            </div>
+            <h1>
+
+              <div class="container">
+
+                <button type="button" class="btn btm-xs register_submit_button">Submit to register for this event</button>
+
+              </h1>
+            </div>
+            <h1>
+            </h1>
+          </div>
+          <script>
+          // use Jquery id to post
+
+          $(document).ready(function(){
+
+            $(".attendee").on("click", function(){
+              $(this).toggleClass("present");
+            });
+
+            $(".register_submit_button").click(function(){
+              confirm("Are you sure you'd like to create the register from this event? Once the register is created, you will be able to access it in admin area.")
+              var present_attendees_id = [];
+              $(".attendee").each(function(){
+                if( $(this).hasClass("present") ) {
+                  present_attendees_id.push( $(this).attr("id") )
+                }
+              })
+              console.log(present_attendees_id)
+
+              $.ajax({
+                type: 'POST',
+                url: '/register',
+                // data: { 'attendees': present_attendees_id },
+                data: (present_attendees_id),
+                success: function(data){
+                  console.log(data);
+                }
+              })
+            });
+          });
+
+          </script>
+
+        </body>
